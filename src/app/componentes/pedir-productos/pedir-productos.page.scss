@@ -1,0 +1,260 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    outline: none;
+    font-family: 'Libre Baskerville', serif;
+}
+  
+.fondoPedirProductos{
+    background-image: url("../../../assets/fondoLogin.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+  
+.headPedirProductos{
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+    height: 5vh;
+    width: 100vw;
+    background-color: rgb(255,215,0);
+}
+  
+.lblHeadPedirProductos{
+    position: absolute;
+    top: 0%;
+    left: 15%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    color: grey;
+    font-size: 4vh;
+    line-height: 150%;
+    text-align: center;
+}
+  
+.imgHeadPedirProductos{
+    position: absolute;
+    top: 0%;
+    left: 85%;
+    width: 15%;
+    height: 100%;
+    border-radius: 100%;
+}
+  
+.btnVolverPedirProductos{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 15%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    color: grey;
+    font-size: 2em;
+    vertical-align: middle;
+} 
+
+.btnPedirProductosPlatos, .btnPedirProductosPostres, .btnPedirProductosBebidas{
+    position: absolute;
+    width: 25%;
+    height: 10%;
+    top: 12%;
+    background-color: rgb(255,215,0);
+}
+
+.btnPedirProductosPlatos{
+    left: 12.5%;
+}
+
+.btnPedirProductosPostres{
+    left: 37.5%;
+}
+
+.btnPedirProductosBebidas{
+    left: 62.5%;
+}
+
+.btnConsultaMozo{
+    position: absolute;
+    width: 38%;
+    height: 6%;
+    top: 90%;
+    left: 50%;
+    background-color: rgb(255,215,0);
+}
+
+.totalPedirProductos{
+    position: absolute;
+    width: 38%;
+    height: 6%;
+    top: 90%;
+    left: 12%;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 0px;
+    text-align: center;
+}
+////////////////////////////////////////////////////////////////////////////////
+
+.contenedorListaProductos{
+    position: absolute;
+    top: 22%;
+    left: 12.5%;
+    width: 75%;
+    height: 65%;
+    background-color: rgba(51, 51, 51, 0.712);
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+.contenedorOpciones{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    height: 50%;
+    width: 300%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.contenedorOpcionComida{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.infoProducto{
+    position: sticky;
+    top: 0%;
+    left: 0%;
+    width: 33.33%;
+    height: 8%;
+    text-align: center;
+    overflow-x: scroll;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.692);
+}
+
+.imgProducto{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 33.33%;
+    background-color: rgba(255, 255, 255, 0);
+    display: inline-block;
+}
+
+.btnAgregarProducto{
+    position: sticky;
+    top: 0%;
+    left: 0%;
+    width: 16.66%;
+    height: 8%;
+    text-align: center;
+    overflow-x: scroll;
+    color: white;
+    background-color: rgb(0, 255, 13);
+}
+
+.btnEliminarProducto{
+    position: sticky;
+    top: 0%;
+    left: 50%;
+    width: 16.66%;
+    height: 8%;
+    text-align: center;
+    overflow-x: scroll;
+    color: white;
+    background-color: rgb(255, 0, 0);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.contenedorConfirmarPedido{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 80%;
+    height: 50%;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.productosConfirmarPedido{
+    position: relative;
+    width: 100%;
+    height: 10%;
+    top: 80%;
+    left: 0%;
+    color: black;
+}
+
+.totalConfirmarPedido{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 80%;
+    left: 0%;
+    color: black;
+    text-align: right;
+}
+
+.btnCancelarPedido{
+    position: absolute;
+    top: 90%;
+    left: 0%;
+    width: 50%;
+    height: 10%;
+    background-color: red;
+    color: black;
+    border-radius: 100%;
+}
+
+.btnConfirmarPedido{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 50%;
+    height: 10%;
+    background-color: green;
+    color: black;
+    border-radius: 100%;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.loadingContainerPedirProductos{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.678);
+    z-index: 299;
+}
+  
+.loadingPedirProductos{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 300;
+    animation: spinPedirProductos 2s linear infinite;
+    background-color: gold;
+    border-radius: 100px;
+}
+  
+@keyframes spinPedirProductos{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}

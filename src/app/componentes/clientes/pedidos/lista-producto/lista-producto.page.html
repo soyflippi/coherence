@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Agregar productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+
+  <!-- COMIDAS -->
+  <ion-list color=“transparent”>
+    <ion-list-header color="light">
+      COMIDAS
+    </ion-list-header>
+
+    <ion-item *ngFor="let producto of listaComida" (click)="verProducto(producto)" color="warning">
+      <ion-avatar slot="start">
+        <img src="{{productoService.obtenerFoto(producto)}}">
+      </ion-avatar>
+      <ion-label color="light">
+        <h2 class="ion-text-capitalize bold">{{producto.nombre}}</h2>
+        <h3>{{producto.descripcion}}</h3>
+        <p>
+          <ion-badge color="light">
+            <ion-icon name="logo-usd"></ion-icon>
+            {{producto.precio}}
+          </ion-badge>
+          <ion-badge color="dark">
+            <ion-icon name="time-outline"></ion-icon>
+            {{producto.tiempo}} min
+          </ion-badge>
+        </p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- BEBIDAS -->
+  <ion-list color=“transparent”>
+    <ion-list-header color="light">
+      BEBIDAS
+    </ion-list-header>
+
+    <ion-item *ngFor="let producto of listaBebida" (click)="verProducto(producto)" color="warning">
+      <ion-avatar slot="start">
+        <img src="{{productoService.obtenerFoto(producto)}}">
+      </ion-avatar>
+      <ion-label color="light">
+        <h2 class="ion-text-capitalize bold">{{producto.nombre}}</h2>
+        <h3>{{producto.descripcion}}</h3>
+        <p>
+          <ion-badge color="light">
+            <ion-icon name="logo-usd"></ion-icon>
+            {{producto.precio}}
+          </ion-badge>
+          <ion-badge color="dark">
+            <ion-icon name="time-outline"></ion-icon>
+            {{producto.tiempo}} min
+          </ion-badge>
+        </p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- POSTRES -->
+  <ion-list color=“transparent”>
+    <ion-list-header color="light">
+      POSTRES
+    </ion-list-header>
+
+    <ion-item *ngFor="let producto of listaPostre" (click)="verProducto(producto)" color="warning">
+      <ion-avatar slot="start">
+        <img src="{{productoService.obtenerFoto(producto)}}">
+      </ion-avatar>
+      <ion-label color="light">
+        <h2 class="ion-text-capitalize bold">{{producto.nombre}}</h2>
+        <h3>{{producto.descripcion}}</h3>
+        <p>
+          <ion-badge color="light">
+            <ion-icon name="logo-usd"></ion-icon>
+            {{producto.precio}}
+          </ion-badge>
+          <ion-badge color="dark">
+            <ion-icon name="time-outline"></ion-icon>
+            {{producto.tiempo}} min
+          </ion-badge>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer color="light">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      TOTAL:
+      <ion-text color="warning">$ {{calcularTotal() + '.00'}}</ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

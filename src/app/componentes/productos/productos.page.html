@@ -1,0 +1,153 @@
+<app-toolbar [titulo]="'Productos'" [backBtn]="'home'" [usuario]="null">
+</app-toolbar>
+
+<ion-content class="background">
+
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <ion-button color="warning" (click)="agregarProducto()" size="block">
+          <ion-icon name="pizza-outline"></ion-icon> Agregar PRODUCTO
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- COMIDAS -->
+  <ion-list color=“transparent”>
+    <ion-list-header color="light">
+      COMIDAS
+    </ion-list-header>
+
+    <ion-item color="warning" *ngIf="listaComida && listaComida.length === 0">
+      <ion-label class="ion-text-wrap">
+        No hay productos cargados
+      </ion-label>
+    </ion-item>
+
+
+
+    <ion-item-sliding *ngFor="let producto of listaComida">
+      <ion-item color="warning">
+        <ion-avatar slot="start">
+          <img src="{{productoService.obtenerFoto(producto)}}">
+        </ion-avatar>
+        <ion-label color="light">
+          <h2 class="ion-text-capitalize bold">{{producto.nombre}}</h2>
+          <h3>{{producto.descripcion}}</h3>
+          <p>
+            <ion-badge color="light">
+              <ion-icon name="logo-usd"></ion-icon>
+              {{producto.precio}}
+            </ion-badge>
+            <ion-badge color="dark">
+              <ion-icon name="time-outline"></ion-icon>
+              {{producto.tiempo}} min
+            </ion-badge>
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="light" (click)="editarProducto(producto)">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="eliminarProducto(producto)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <!-- BEBIDAS -->
+
+  <ion-list color=“transparent”>
+    <ion-list-header color="light">
+      BEBIDAS
+    </ion-list-header>
+
+    <ion-item color="warning" *ngIf="listaBebida && listaBebida.length === 0">
+      <ion-label class="ion-text-wrap">
+        No hay productos cargados
+      </ion-label>
+    </ion-item>
+
+    <ion-item-sliding *ngFor="let producto of listaBebida">
+      <ion-item color="warning">
+        <ion-avatar slot="start">
+          <img src="{{productoService.obtenerFoto(producto)}}">
+        </ion-avatar>
+        <ion-label color="light">
+          <h2 class="ion-text-capitalize bold">{{producto.nombre}}</h2>
+          <h3>{{producto.descripcion}}</h3>
+          <p>
+            <ion-badge color="light">
+              <ion-icon name="logo-usd"></ion-icon>
+              {{producto.precio}}
+            </ion-badge>
+            <ion-badge color="dark">
+              <ion-icon name="time-outline"></ion-icon>
+              {{producto.tiempo}} min
+            </ion-badge>
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="light" (click)="editarProducto(producto)">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="eliminarProducto(producto)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- POSTRES -->
+
+  <ion-list color=“transparent”>
+    <ion-list-header color="light">
+      POSTRES
+    </ion-list-header>
+
+    <ion-item color="warning" *ngIf="listaPostre && listaPostre.length === 0">
+      <ion-label class="ion-text-wrap">
+        No hay productos cargados
+      </ion-label>
+    </ion-item>
+
+    <ion-item-sliding *ngFor="let producto of listaPostre">
+      <ion-item color="warning">
+        <ion-avatar slot="start">
+          <img src="{{productoService.obtenerFoto(producto)}}">
+        </ion-avatar>
+        <ion-label color="light">
+          <h2 class="ion-text-capitalize bold">{{producto.nombre}}</h2>
+          <h3>{{producto.descripcion}}</h3>
+          <p>
+            <ion-badge color="light">
+              <ion-icon name="logo-usd"></ion-icon>
+              {{producto.precio}}
+            </ion-badge>
+            <ion-badge color="dark">
+              <ion-icon name="time-outline"></ion-icon>
+              {{producto.tiempo}} min
+            </ion-badge>
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="light" (click)="editarProducto(producto)">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="eliminarProducto(producto)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

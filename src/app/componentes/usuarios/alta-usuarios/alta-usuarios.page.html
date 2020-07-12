@@ -1,0 +1,95 @@
+<!-- <ion-header>
+  <ion-toolbar color="warning">
+    <ion-button slot="start" fill="clear" (click)="volverAltaUsuarios()">
+      <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title class="ion-text-center">
+      Nuevo Usuario
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<app-toolbar
+  [titulo]="'Nuevo '.concat(getTipoAlta())"
+  [backBtn]="'inicio'"
+  [usuario]="null">
+</app-toolbar>
+
+<ion-content class="background">
+
+  <ion-button color="warning" *ngIf="mostrarSegunAlta('qr')" (click)="scanQrAltaUsuarios()" expand="block">
+    <ion-icon name="qr-code-outline"></ion-icon> QR
+  </ion-button>
+  <ion-button color="warning" (click)="tomarFotoAltaUsuarios()" expand="block">
+    <ion-icon name="camera-outline"></ion-icon> FOTO
+  </ion-button>
+
+  <form [formGroup]="formUsuario" (ngSubmit)="onSubmitUsuario()">
+
+    <div class="divCorreoAltaUsuarios" *ngIf="mostrarSegunAlta('correo')">
+      <label class="lblCorreoAltaUsuarios">Correo Electrónico</label>
+      <input type="email" class="inpCorreoAltaUsuarios" formControlName="correo">
+      <label class="lblErrorCorreoAltaUsuarios"
+        [hidden]="formUsuario.controls.correo.valid || formUsuario.controls.correo.pristine">CORREO INVALIDO</label>
+    </div>
+
+    <div class="divClaveAltaUsuarios" *ngIf="mostrarSegunAlta('clave')">
+      <label class="lblClaveAltaUsuarios">Contraseña</label>
+      <input type="password" class="inpClaveAltaUsuarios" formControlName="clave">
+      <label class="lblErrorClaveAltaUsuarios"
+        [hidden]="formUsuario.controls.clave.valid || formUsuario.controls.clave.pristine">CLAVE INVALIDA</label>
+    </div>
+
+    <div class="divClave2AltaUsuarios" *ngIf="mostrarSegunAlta('clave2')">
+      <label class="lblClave2AltaUsuarios">Confirme Contraseña</label>
+      <input type="password" class="inpClave2AltaUsuarios" formControlName="clave2">
+      <label class="lblErrorClave2AltaUsuarios"
+        [hidden]="formUsuario.controls.clave2.pristine || formUsuario.controls.clave.value === formUsuario.controls.clave2.value">CLAVE INVALIDA</label>
+    </div>
+
+    <div class="divNombreAltaUsuarios" *ngIf="mostrarSegunAlta('nombre')">
+      <label class="lblNombreAltaUsuarios">Nombre</label>
+      <input type="text" class="inpNombreAltaUsuarios" formControlName="nombre">
+      <label class="lblErrorNombreAltaUsuarios"
+        [hidden]="formUsuario.controls.nombre.valid || formUsuario.controls.nombre.pristine">NOMBRE INVALIDO</label>
+    </div>
+
+    <div class="divApellidoAltaUsuarios" *ngIf="mostrarSegunAlta('apellido')">
+      <label class="lblApellidoAltaUsuarios">Apellido</label>
+      <input type="text" class="inpApellidoAltaUsuarios" formControlName="apellido">
+      <label class="lblErrorApellidoAltaUsuarios"
+        [hidden]="formUsuario.controls.apellido.valid || formUsuario.controls.apellido.pristine">APELLIDO
+        INVALIDO</label>
+    </div>
+
+    <div class="divDniAltaUsuarios" *ngIf="mostrarSegunAlta('dni')">
+      <label class="lblDniAltaUsuarios">DNI</label>
+      <input type="text" class="inpDniAltaUsuarios" formControlName="dni" name="dni">
+      <label class="lblErrorDniAltaUsuarios"
+        [hidden]="formUsuario.controls.dni.valid || formUsuario.controls.dni.pristine">DNI INVALIDO</label>
+    </div>
+
+    <div class="divCuilAltaUsuarios" *ngIf="mostrarSegunAlta('cuil')">
+      <label class="lblCuilAltaUsuarios">CUIL</label>
+      <input type="text" class="inpCuilAltaUsuarios" formControlName="cuil" name="cuil">
+      <label class="lblErrorCuilAltaUsuarios"
+        [hidden]="(formUsuario.controls.cuil.valid && validacionAuxCuil(formUsuario.controls.dni.value)) || formUsuario.controls.cuil.pristine">CUIL
+        INVALIDO</label>
+    </div>
+
+    <div class="divTipoAltaUsuarios" *ngIf="mostrarSegunAlta('tipo')">
+      <select class="listTipoAltaUsuarios" formControlName="tipo">
+        <option value="MOZO">MOZO</option>
+        <option value="COCINERO">COCINERO</option>
+        <option value="BARTENDER">BARTENDER</option>
+        <option value="METRE">METRE</option>
+      </select>
+    </div>
+
+    <!-- <button type="button" class="btnVolverAltaUsuarios" (click)="volverAltaUsuarios()">Volver</button>
+    <button type="button" class="btnQrAltaUsuarios" (click)="scanQrAltaUsuarios()">QR</button>
+    <button class="btnFotoAltaUsuarios" type="button" (click)="tomarFotoAltaUsuarios()">FOTO</button> -->
+    <ion-button type="submit" class="btnSubmitAltaUsuarios" color="warning" expand="block">ENVIAR</ion-button>
+  </form>
+
+</ion-content>

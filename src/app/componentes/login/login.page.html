@@ -1,26 +1,37 @@
-<div class="fondoLogin">
-  <form  (ngSubmit) ="onSubmitLogin()">
+<!-- <ion-header>
+  <ion-toolbar color="warning">
+    <ion-button slot="start" fill="clear" (click)="moveTo('inicio')">
+      <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>
+      Inicia sesión
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
 
+<app-toolbar
+  [titulo]="'Inicia sesión'"
+  [backBtn]="'inicio'"
+  [usuario]="null">
+</app-toolbar>
+
+<ion-content class="background">
+  <form [formGroup]="formLogin" (ngSubmit)="onSubmitLogin()">
     <label class="lblCorreoLogin">Correo Electrónico</label>
-    <ion-input type="text" class="inpCorreoLogin" id="inpCorreoLogin" name="inpCorreoLogin"></ion-input>
-        
-    <div id="errCorreoLogin" class="errCorreoLogin" hidden>CORREO INVALIDO</div>
+    <input type="text" class="inpCorreoLogin" formControlName="correoLogin">
+    <div class="errCorreoLogin" [hidden]="!errorEnControlLogin('correoLogin')">CORREO INVALIDO</div>
 
     <label class="lblClaveLogin">Contraseña</label>
-    <ion-input type="password" class="inpClaveLogin" id="inpClaveLogin" name="inpClaveLogin"></ion-input>
+    <input type="password" class="inpClaveLogin" formControlName="claveLogin">
+    <div class="errClaveLogin" [hidden]="!errorEnControlLogin('claveLogin')">CLAVE INVALIDA</div>
 
-    <div id="errClaveLogin" class="errClaveLogin" hidden>CLAVE INVALIDA</div>
-      
-    <div id="errUsuarioLogin" class="errUsuarioLogin" hidden>USUARIO NO EXISTE</div>
-
-    <button type="submit" class="btnSubmitLogin">Enviar</button>
-    <button type="button" (click)="limpiarInputs()" (click)="limpiarErrores()" class="btnResetLogin">Limpiar</button>
-
-    
+    <ion-button type="submit" color="warning" [disabled]="!formLogin.valid" class="btnSubmitLogin">Enviar</ion-button>
+    <ion-button color="warning" (click)="limpiarLogin()" class="btnResetLogin">Limpiar</ion-button>
   </form>
-  <div class="loadingContainerLogin" id="loadingContainerLogin" hidden>
-    <div class="loadingLogin">
-      <img src="../../../assets/spinner.png">
-    </div>
-  </div>
-</div>
+</ion-content>
+
+<ion-footer class="ion-text-center">
+  <ion-toolbar color="warning">
+    <h5 expand="full" (click)="mockLogin()">Usuarios</h5>
+  </ion-toolbar>
+</ion-footer>

@@ -1,11 +1,86 @@
-<div class="fondoHome">
+<!-- <ion-header>
+  <ion-toolbar color="warning">
+    <ion-button slot="start" fill="clear" (click)="logOut()">
+      <ion-icon color="light" name="log-out-outline"></ion-icon>
+    </ion-button>
+    <ion-title class="ion-text-center">
+      COHERENCE
+    </ion-title>
+    <ion-avatar *ngIf="usuario" slot="end" class="avatar">
+      <img [src]="usuarioService.obtenerFoto(usuario)">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header> -->
 
-  <button type="button" class="btnVolverHome" (click)="volverHome()">Volver</button>
-  
-  <div class="loadingContainerHome" id="loadingContainerHome" hidden>
-    <div class="loadingHome">
-      <img src="../../../assets/spinner.png">
-    </div>
-  </div>
+<app-toolbar [notificaciones]="true" [titulo]="'COHERENCE'" [usuario]="usuario">
+</app-toolbar>
 
-</div>
+<ion-content class="background ion-padding">
+
+  <ion-card color="light">
+    <ion-text class="ion-text-center" color="dark">
+      <h2>Bienvenido <ion-label color="warning">{{usuario?.nombre}}</ion-label>!</h2>
+    </ion-text>
+  </ion-card>
+
+  <section class="opciones">
+
+    <ion-button *ngIf="usuario && (usuario.perfil === 'DUEÑO' || usuario.perfil === 'SUPERVISOR')" size="large"
+      expand="block" color="warning" (click)="gestionarUsuarios()">
+      <ion-icon slot="start" name="people"></ion-icon> Gestionar Usuarios
+    </ion-button>
+
+    <ion-button *ngIf="usuario && usuario.perfil === 'METRE'" size="large" expand="block" color="warning"
+      (click)="gestionarUsuarios()">
+      <ion-icon slot="start" name="people"></ion-icon> Gestionar Clientes
+    </ion-button>
+
+    <ion-button *ngIf="usuario && usuario.perfil === 'METRE'" size="large" expand="block" color="warning"
+      (click)="gestionarListaEspera()">
+      <ion-icon name="reader-outline"></ion-icon> Lista de Espera
+    </ion-button>
+
+    <ion-button *ngIf="usuario && (usuario.perfil === 'DUEÑO' || usuario.perfil === 'SUPERVISOR')" size="large"
+      expand="block" color="warning" (click)="gestionarMesas()">
+      <ion-icon slot="start" name="tablet-landscape-outline"></ion-icon> Gestionar Mesas
+    </ion-button>
+
+    <ion-button
+      *ngIf="usuario && (usuario.perfil === 'COCINERO' || usuario.perfil === 'BARTENDER' || usuario.perfil === 'DUEÑO' || usuario.perfil === 'SUPERVISOR')"
+      size="large" expand="block" color="warning" (click)="irAProductos()">
+      <ion-icon slot="start" name="pizza-outline"></ion-icon> Gestionar Productos
+    </ion-button>
+
+    <ion-button *ngIf="usuario && (usuario.perfil === 'DUEÑO' || usuario.perfil === 'SUPERVISOR')" size="large"
+      expand="block" color="warning" (click)="gestionarPropinas()">
+      <ion-icon slot="start" name="wallet-outline"></ion-icon>
+      Gestionar Propinas
+    </ion-button>
+
+    <!-- <ion-button *ngIf="usuario && (usuario.perfil === 'COCINERO' || usuario.perfil === 'BARTENDER')" size="large"
+      expand="block" color="warning" (click)="productos()">
+      <ion-icon slot="start" name="pizza-outline"></ion-icon>
+      Gestionar Productos
+    </ion-button> -->
+
+    <!-- PENDIENTES -->
+    <ion-button
+      *ngIf="usuario && (usuario.perfil === 'COCINERO' || usuario.perfil === 'BARTENDER' || usuario.perfil === 'MOZO')"
+      size="large" expand="block" color="warning" (click)="irAPendientes()">
+      <ion-icon slot="start" name="pizza-outline"></ion-icon>
+      Listado Pendientes
+    </ion-button>
+    <!-- ---------- -->
+
+    <ion-button *ngIf="usuario && usuario.perfil === 'MOZO'" size="large" expand="block" color="warning"
+      (click)="irAMozo()">
+      <ion-icon slot="start" name="wine-outline"></ion-icon>
+      Pedidos activos
+    </ion-button>
+
+    <!-- <ion-button size="large" expand="block" color="warning"> 
+      <ion-icon slot="start" name="restaurant-outline"></ion-icon> Listado Pedidos
+    </ion-button> -->
+  </section>
+
+</ion-content>

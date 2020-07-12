@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Encuesta
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formEncuesta" (ngSubmit)="onSubmitEncuesta()">
+    <label class="lblTitulo">Calidad</label>
+    <ion-range min="1" max="10" color="dark" pin snaps="true" ticks="true" [formControl]="formEncuesta.controls.calidad">
+      <ion-icon slot="start" name="thumbs-down"></ion-icon>
+      <ion-icon slot="end" name="thumbs-up"></ion-icon>
+    </ion-range>
+    <label class="lblError"
+      *ngIf="formEncuesta.controls.calidad.invalid && (formEncuesta.controls.calidad.touched || formEncuesta.controls.calidad.dirty)">{{ mostrarError('calidad') }}</label>
+
+    <label class="lblTitulo">Servicio</label>
+    <ion-range min="1" max="10" color="dark" pin snaps="true" ticks="true" [formControl]="formEncuesta.controls.servicio">
+      <ion-icon slot="start" name="thumbs-down"></ion-icon>
+      <ion-icon slot="end" name="thumbs-up"></ion-icon>
+    </ion-range>
+    <label class="lblError"
+      *ngIf="formEncuesta.controls.servicio.invalid && (formEncuesta.controls.servicio.touched || formEncuesta.controls.servicio.dirty)">{{ mostrarError('servicio') }}</label>
+
+    <label class="lblTitulo">Limpieza</label>
+    <ion-range min="1" max="10" color="dark" pin snaps="true" ticks="true" [formControl]="formEncuesta.controls.limpieza">
+      <ion-icon slot="start" name="thumbs-down"></ion-icon>
+      <ion-icon slot="end" name="thumbs-up"></ion-icon>
+    </ion-range>
+    <label class="lblError"
+      *ngIf="formEncuesta.controls.limpieza.invalid && (formEncuesta.controls.limpieza.touched || formEncuesta.controls.limpieza.dirty)">{{ mostrarError('limpieza') }}</label>
+
+    <label class="lblTitulo">Comentarios</label>
+    <ion-textarea inputmode="text" [autoGrow]="true" [formControl]="formEncuesta.controls.comentarios"></ion-textarea>
+    <label class="lblError"
+      *ngIf="formEncuesta.controls.comentarios.invalid && (formEncuesta.controls.comentarios.touched || formEncuesta.controls.comentarios.dirty)">{{ mostrarError('comentarios') }}</label>
+
+    <ion-button class="btnSubmitAltaEncuestas" type="submit" color="warning" expand="block">Guardar</ion-button>
+  </form>
+</ion-content>

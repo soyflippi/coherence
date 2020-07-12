@@ -1,0 +1,53 @@
+<app-toolbar [titulo]="'COHERENCE'" [usuario]="usuario">
+</app-toolbar>
+
+<ion-content class="background">
+  <ion-card color="light">
+    <ion-text class="ion-text-center" color="dark">
+      <h2>Bienvenido <ion-label color="warning">{{usuario?.nombre}}</ion-label>!</h2>
+    </ion-text>
+  </ion-card>
+  <ion-card (click)="escanearQR()" *ngIf="pedidosActivos && pedidosActivos.length === 0">
+    <img src="../../../../assets/mesa-qr.png" />
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Buscar una <ion-label color="warning">MESA</ion-label>
+        <ion-icon class="ion-float-right" color="warning" name="arrow-forward-outline">
+        </ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Escaneá el código QR que se encuentra en la mesa para ingresar en la lista de espera.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="escanearQR()" *ngIf="pedidosActivos && pedidosActivos.length > 0">
+    <img src="../../../../assets/mesa-qr.png" />
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Tu pedido <ion-label color="warning">actual</ion-label>
+        <ion-icon class="ion-float-right" color="warning" name="arrow-forward-outline">
+        </ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Escaneá el código QR que se encuentra en la mesa para ver el detalle de tu pedido en curso.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="irFinalizados()">
+    <img src="../../../../assets/platos.png" />
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Pedidos <ion-label color="warning">anteriores</ion-label>
+        <ion-icon class="ion-float-right" color="warning" name="arrow-forward-outline"></ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Tus pedidos finalizados.
+    </ion-card-content>
+  </ion-card>
+</ion-content>

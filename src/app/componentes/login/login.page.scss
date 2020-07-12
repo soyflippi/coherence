@@ -1,22 +1,3 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    outline: none;
-}
-
-.fondoLogin{
-    background-image: url("../../../assets/fondoLogin.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-}
-
 .lblCorreoLogin{
     position: absolute;
     width: 80vw; 
@@ -30,8 +11,6 @@
     vertical-align: middle;
     line-height: 5vh; 
     font-size: 3vh;
-    font-family:Helvetica, sans-serif;
-    font-weight:bold;
 }
 
 .inpCorreoLogin{
@@ -41,10 +20,11 @@
     top: 15vh;
     left: 10vw;
     color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px;
     border-bottom: 3px solid grey;
     font-size: 3vh;
-    font-family:Helvetica, sans-serif;
-    font-weight:bold;
+    text-align: center;
 }
 
 .lblClaveLogin{
@@ -59,9 +39,7 @@
     text-align: center;
     vertical-align: middle;
     line-height: 5vh; 
-    font-size: 3vh;
-    font-family:Helvetica, sans-serif;
-    font-weight:bold;
+    font-size: 3vh;;
 }
 
 .inpClaveLogin{
@@ -71,10 +49,11 @@
     top: 35vh;
     left: 10vw;
     color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px;
     border-bottom: 3px solid grey;
     font-size: 3vh;
-    font-family:Helvetica, sans-serif;
-    font-weight:bold;
+    text-align: center;
 }
 
 //ERRORES
@@ -93,8 +72,6 @@
     vertical-align: middle;
     line-height: 6vh; 
     font-size: x-large;
-    font-family:Helvetica, sans-serif;
-    font-weight:bold;
     animation: showErrorLogin 2s linear;
 }
 
@@ -111,100 +88,69 @@
     vertical-align: middle;
     line-height: 6vh; 
     font-size: x-large;
-    font-family:Helvetica, sans-serif;
-    font-weight:bold;
-    animation: showErrorLogin 2s linear;
-}
-
-.errUsuarioLogin{
-    position: absolute;
-    width: 80vw; 
-    height: 5vh;
-    top: 47vh;
-    left: 10vw;
-    border-radius: 10px;
-    color: grey;
-    background-color: black;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 6vh; 
-    font-size: x-large;
-    font-family:Helvetica, sans-serif;
-    font-weight:bold;
     animation: showErrorLogin 2s linear;
 }
 
 ///////////////////////////////////////////////////////////////////////////
+
 .btnSubmitLogin{
     position: absolute; 
     width: 70vw; 
     height: 10vh;
     top: 60vh;
     left: 15vw;
-    color: grey;
+    /*color: grey;
     background-color:  rgb(255,215,0);
     border-radius: 10px;
     box-shadow: 0 10px 	rgb(218,165,32);
-    font-size: 5vh;
-    font-family:Helvetica, sans-serif;
-    font-weight:bold;
+    font-size: 5vh;*/
 }
 
-.btnSubmitLogin:active{
+/*.btnSubmitLogin:active{
     transform: translate(0px, 5px);
     box-shadow: 0 5px rgb(218,165,32);
-}
-
+}*/
 
 .btnResetLogin{
     position: absolute; 
     width: 70vw; 
-    height: 10vh;
-    top: 80vh;
+    height: 6vh;
+    top: 75vh;
     left: 15vw;
-    color: grey;
+    /*color: grey;
     background-color:  rgb(255,215,0);
     border-radius: 10px;
     box-shadow: 0 10px 	rgb(218,165,32);
-    font-size: 5vh;
-    font-family:Helvetica, sans-serif;
-    font-weight:bold;
+    font-size: 5vh;*/
 }
 
-.btnResetLogin:active{
+/*.btnResetLogin:active{
     transform: translate(0px, 5px);
     box-shadow: 0 5px rgb(218,165,32);
-}
-
-.loadingContainerLogin{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.678);
-    z-index: 299;
-}
-
-.loadingLogin{
-    width: 100px;
-    height: 100px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    z-index: 300;
-    animation: spinLogin 2s linear infinite;
-    background-color: gold;
-    border-radius: 100px;
-}
-
-@keyframes spinLogin{
-    from{transform: rotate(0deg);}
-    to{transform: rotate(360deg);}
-}
+}*/
 
 @keyframes showErrorLogin{
     from {transform: scale(0.5, 0.5);}
     to {transform: scale(1, 1);}
 }
+
+.headLogin{
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  height: 5vh;
+  width: 100vw;
+  background-color: rgb(255,215,0);
+}
+
+.btnVolverLogin{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 15%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  color: grey;
+  font-size: 2em;
+  vertical-align: middle;
+} 

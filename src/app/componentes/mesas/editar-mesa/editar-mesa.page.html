@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Editar Mesa #{{ mesa?.numero }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-align-self-center" size="12">
+        <ion-list-header>
+          <ion-text color="light">
+            <h2 class="lblNombreAltaUsuarios">Foto mesa </h2>
+          </ion-text>
+        </ion-list-header>
+        <ion-avatar class="ion-margin-start" (click)="tomarFotoAltaMesas()">
+          <img src="{{mesaService.mostrarFoto(formMesa.controls.foto.value)}}">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+ <form [formGroup]="formMesa" (ngSubmit) ="onSubmitMesa()">
+   <label class="lblTitulo">Número de mesa</label>
+   <ion-input type="number" [formControl]="formMesa.controls.numeroMesa"></ion-input>
+   <label class="lblError" *ngIf="formMesa.controls.numeroMesa.invalid && (formMesa.controls.numeroMesa.touched || formMesa.controls.numeroMesa.dirty)">{{ mostrarError('numeroMesa') }}</label>
+       
+   <label class="lblTitulo">Cantidad de comensales</label>
+   <ion-input type="number" [formControl]="formMesa.controls.cantidadComensales"></ion-input>
+   <label class="lblError" *ngIf="formMesa.controls.cantidadComensales.invalid && (formMesa.controls.cantidadComensales.touched || formMesa.controls.cantidadComensales.dirty)">{{ mostrarError('cantidadComensales') }}</label>
+   
+   <label class="lblTitulo">Tipo de mesa</label>
+   <ion-select [formControl]="formMesa.controls.tipoMesa">
+     <ion-select-option *ngFor="let tipo of tipoMesa">{{ tipo }}</ion-select-option>
+   </ion-select>
+   <label class="lblError" *ngIf="formMesa.controls.tipoMesa.invalid && (formMesa.controls.tipoMesa.touched || formMesa.controls.tipoMesa.dirty)">{{ mostrarError('tipoMesa') }}</label>
+
+   <ion-button class="btnSubmitAltaMesas" type="submit" color="warning" expand="block">Editar</ion-button>
+ </form>
+</ion-content>

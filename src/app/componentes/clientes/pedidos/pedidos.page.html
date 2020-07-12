@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Pedido
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle> MESA #<ion-label color="warning">{{pedido?.mesa.numero}}</ion-label>
+      </ion-card-subtitle>
+      <ion-card-title>PEDIDO #<ion-label color="warning">{{pedido?.id.substr(-5)}}</ion-label>
+        <ion-icon class="ion-float-right" color="warning" name="information-circle-outline">
+        </ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      ESTADO <ion-label color="warning">{{pedido?.estado}}</ion-label>
+    </ion-card-content>
+    <img src="../../../../../assets/mesa-qr.png" />
+  </ion-card>
+
+  <ion-card (click)="verDetalle()">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Ver <ion-label color="warning">DETALLE</ion-label>
+        <ion-icon class="ion-float-right" color="warning" name="reader-outline">
+        </ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Consulta el detalle de tu pedido actual.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="pedido?.estado === 'PENDIENTE'" (click)="agregarComida()">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Agregar <ion-label color="warning">COMIDA</ion-label>
+        <ion-icon class="ion-float-right" color="warning" name="add-circle-outline">
+        </ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Agrega productos a tu pedido.
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-card *ngIf="pedido?.estado === 'ENTREGADO'" (click)="escanearQR()">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Adicionar <ion-label color="warning">PROPINA</ion-label>
+        <ion-icon class="ion-float-right" color="warning" name="cash-outline">
+        </ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      En relación al servicio brindado.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="pedido?.estado === 'ENTREGADO'" (click)="verDetalle()">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Pedir <ion-label color="warning">CUENTA</ion-label>
+        <ion-icon class="ion-float-right" color="warning" name="logo-usd">
+        </ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Solicitar la cuenta para pagar.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="pedido?.estado === 'CONFIRMADO' || pedido?.estado === 'ENTREGADO'" (click)="verEncuesta()">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Llenar <ion-label color="warning">ENCUESTA</ion-label>
+        <ion-icon class="ion-float-right" color="warning" name="document-outline">
+        </ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Completar la encuesta de satisfacción.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="chatear('MOZO')">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Consultar al <ion-label color="warning">MOZO</ion-label>
+        <ion-icon class="ion-float-right" color="warning" name="chatbox-outline">
+        </ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Consulta al mozo lo que necesites.
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer color="light">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      TOTAL:
+      <ion-text color="warning">$ {{calcularTotalFinal()|number:'1.2-2'}}</ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

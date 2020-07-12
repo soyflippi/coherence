@@ -1,0 +1,225 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  outline: none;
+}
+
+/*--------------------*/
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+/*--------------------*/
+
+.fondoHome{
+  background-image: url("src/assets/fondoLogin.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/*.btnVolverHome{
+  position: absolute; 
+  width: 20vw; 
+  height: 10vh;
+  top: 5vh;
+  left: 5vw;
+  color: grey;
+  background-color:  rgb(255,215,0);
+  border-radius: 10px;
+  box-shadow: 0 10px 	rgb(218,165,32);
+  font-size: 3vh;
+  font-family:Helvetica, sans-serif;
+  font-weight:bold;
+}
+
+.btnVolverHome:active{
+  transform: translate(0px, 5px);
+  box-shadow: 0 5px rgb(218,165,32);
+}*/
+
+
+.loadingContainerMesa{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.678);
+  z-index: 299;
+}
+
+.loadingMesa{
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 300;
+  animation: spinHome 2s linear infinite;
+  background-color: gold;
+  border-radius: 100px;
+}
+
+@keyframes spinHome{
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+.lblTitulo {
+  border-radius: 10px;
+  background-color: rgb(255,215,0);
+  color:  grey;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 5vh; 
+  font-size: 3vh;
+  /*font-family:Helvetica, sans-serif;
+  font-weight:bold*/;
+}
+
+.lblError {
+  border-radius: 10px;
+  background-color: rgb(255,215,0);
+  color:  red;
+  display: block;
+  /*text-align: center;
+  vertical-align: middle;
+  line-height: 5vh; 
+  font-size: 3vh;
+  font-family:Helvetica, sans-serif;
+  font-weight:bold;*/
+}
+
+ion-input, ion-select {
+  color: grey;
+  border-bottom: 3px solid grey;
+  font-size: 3vh;
+  /*font-family:Helvetica, sans-serif;
+  font-weight:bold*/;
+}
+
+/*button {
+  color: grey;
+  background-color:  rgb(255,215,0);
+  border-radius: 10px;
+  box-shadow: 0 10px 	rgb(218,165,32);
+  font-size: 5vh;
+  font-family:Helvetica, sans-serif;
+  font-weight:bold;
+  min-width: 20vw;
+  margin-right: 5vw;
+  margin-bottom: 5vh;
+}
+
+button:active {
+  transform: translate(0px, 5px);
+  box-shadow: 0 5px rgb(218,165,32);
+}*/
+
+.btnVolverAltaMesas{
+  position: absolute; 
+  width: 25vw; 
+  height: 4vh;
+  top: 96vh;
+  left: 0vw;
+  color: grey;
+  background-color:  rgb(255,215,0);
+  border-radius: 10px;
+  font-size: 2vh;
+  /*font-family:Helvetica, sans-serif;
+  font-weight:bold;*/
+}
+
+.btnFotoAltaMesas:active{
+  background-color: rgb(218,165,32);
+}
+
+.btnSubmitAltaMesas{
+  position: absolute; 
+  width: 90vw; 
+  height: 10vh;
+  bottom: 0;
+  left: 5vw;
+  /*width: 25vw; 
+  height: 4vh;
+  top: 96vh;
+  left: 75vw;
+  color: grey;
+  background-color:  rgb(255,215,0);
+  border-radius: 10px;
+  font-size: 2vh;
+  font-family:Helvetica, sans-serif;
+  font-weight:bold;*/
+}
+
+.btnFotoAltaMesas:active{
+  background-color: rgb(218,165,32);
+}
+
+.btnFotoAltaMesas{
+  position: absolute; 
+  width: 25vw; 
+  height: 4vh;
+  top: 96vh;
+  left: 25vw;
+  color: grey;
+  background-color:  rgb(255,215,0);
+  border-radius: 10px;
+  font-size: 2vh;
+  /*font-family:Helvetica, sans-serif;
+  font-weight:bold;*/
+}
+
+.btnFotoAltaMesas:active{
+  background-color: rgb(218,165,32);
+}

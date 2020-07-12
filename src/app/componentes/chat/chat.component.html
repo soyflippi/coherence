@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Consultas a {{ receptor.toLowerCase() }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" padding [scrollEvents]="true">
+  <div *ngIf="pedido && !loading">
+    <ion-card *ngFor="let mensaje of listaMensajes;let i = index; let last = last"
+      [class]="mensaje.user.id !== user.id ? 'ion-float-left' : 'ion-float-right'">
+      <ion-card-header>
+        <ion-card-title color="primary" *ngIf="mensaje.user.id !== user.id">{{mensaje.user.nombre}}
+        </ion-card-title>
+        <ion-card-subtitle>{{getFecha(mensaje.created_at) | date: 'dd/MM/yy HH:mm'}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        {{mensaje.text}}
+        {{last ? updateScroll(i) : ''}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<!-- <ion-footer padding> -->
+<div class="footer">
+  <ion-item>
+    <ion-textarea name="msg" [(ngModel)]="msg" rows="1" [value] placeholder="Ingresá tu mensaje...">
+    </ion-textarea>
+    <ion-button fill="clear" (click)="sendMensaje()">
+      <ion-icon slot="end" name="send"></ion-icon>
+    </ion-button>
+  </ion-item>
+</div>
+<!-- </ion-footer> -->

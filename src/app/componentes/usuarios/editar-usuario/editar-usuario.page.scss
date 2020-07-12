@@ -1,0 +1,441 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    outline: none;
+}
+
+.btnVolverAltaUsuarios{ 
+    width: 25vw; 
+    height: 4vh;
+    top: 96vh;
+    left: 0vw;
+    color: grey;
+    background-color:  rgb(255,215,0);
+    border-radius: 10px;
+    font-size: 2vh;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+}
+  
+.btnFotoAltaUsuarios:active{
+    background-color: rgb(218,165,32);
+}
+
+.btnSubmitAltaUsuarios{ 
+    margin-top: 20px;
+    height: 7vh;
+    /*width: 25vw; 
+    height: 4vh;
+    top: 96vh;
+    left: 75vw;
+    color: grey;
+    background-color:  rgb(255,215,0);
+    border-radius: 10px;
+    font-size: 2vh;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+  
+.btnFotoAltaUsuarios:active{
+    background-color: rgb(218,165,32);
+}
+
+.btnFotoAltaUsuarios{ 
+    width: 25vw; 
+    height: 4vh;
+    top: 96vh;
+    left: 50;
+    color: grey;
+    background-color:  rgb(255,215,0);
+    border-radius: 10px;
+    font-size: 2vh;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+.btnFotoAltaUsuarios:active{
+    background-color: rgb(218,165,32);
+}
+
+.btnQrAltaUsuarios{ 
+    width: 25vw; 
+    height: 4vh;
+    top: 96vh;
+    left: 25vw;
+    color: grey;
+    background-color:  rgb(255,215,0);
+    border-radius: 10px;
+    font-size: 2vh;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+.btnQrAltaUsuarios:active{
+    background-color: rgb(218,165,32);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblCorreoAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpCorreoAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorCorreoAltaUsuarios{
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblClaveAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblClave2AltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpClaveAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpClave2AltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorClaveAltaUsuarios{
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorClave2AltaUsuarios{
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblNombreAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpNombreAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorNombreAltaUsuarios{
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblApellidoAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpApellidoAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorApellidoAltaUsuarios{
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblDniAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpDniAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorDniAltaUsuarios{
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblCuilAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpCuilAltaUsuarios{
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorCuilAltaUsuarios{
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.listTipoAltaUsuarios{
+    width: 100%; 
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    border: 0px;
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+

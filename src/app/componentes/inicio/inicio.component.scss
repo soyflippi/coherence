@@ -1,0 +1,103 @@
+.fondo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background: url("../../../assets/splash.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+.logoSplash{
+    height: 40vh;
+    width: 40vw;
+    display: flex;
+    left: 30vw;
+    bottom: 30vh;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.divTitulo{
+    position: absolute;
+    width: 100vw;
+    height: 5vh;
+    left: 0vw;
+    top: 70vh;
+    color: black;
+    font-size: 6vh;
+    text-align: center;
+}
+
+.divNombres{
+    position: absolute;
+    width: 100vw;
+    height: 15vh;
+    left: 0vw;
+    top: 80vh;
+    color: black;
+    font-size: 2vh;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.btnClienteAnonimoInicio, .btnClienteRegistradoInicio, .btnLoginInicio{
+  position: absolute; 
+  width: 40vw; 
+  top: 5vh;
+  height: 10vh;
+  /*color: grey;
+  background-color:  rgb(255,215,0);
+  border-radius: 10px;
+  box-shadow: 0 10px 	rgb(218,165,32);
+  font-size: 3vh;
+  font-family:Helvetica, sans-serif;
+  font-weight:bold;*/
+}
+
+.btnClienteRegistradoInicio{
+  left: 5vw;
+}
+
+.btnClienteAnonimoInicio{
+  left: 55vw;
+}
+
+.btnLoginInicio{
+  width: 90vw; 
+  top: 20vh;
+  left: 5vw;
+}
+
+.loadingContainerInicio{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.678);
+  z-index: 299;
+}
+
+.loadingInicio{
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 300;
+  animation: spinInicio 2s linear infinite;
+  background-color: gold;
+  border-radius: 100px;
+}
+
+@keyframes spinInicio{
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Editar Propina
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background ion-padding">
+ <form [formGroup]="formPropina" (ngSubmit) ="onSubmitPropina()">
+   <label class="lblTitulo">Porcentaje de propina</label>
+   <ion-input type="number" [formControl]="formPropina.controls.porcentajePropina"></ion-input>
+   <label class="lblError" *ngIf="formPropina.controls.porcentajePropina.invalid && (formPropina.controls.porcentajePropina.touched || formPropina.controls.porcentajePropina.dirty)">{{ mostrarError('porcentajePropina') }}</label>
+   
+   <label class="lblTitulo">Nivel de satisfacción</label>
+   <ion-select [formControl]="formPropina.controls.nivelSatisfaccion">
+     <ion-select-option *ngFor="let nivel of nivelSatisfaccion">{{ nivel }}</ion-select-option>
+   </ion-select>
+   <label class="lblError" *ngIf="formPropina.controls.nivelSatisfaccion.invalid && (formPropina.controls.nivelSatisfaccion.touched || formPropina.controls.nivelSatisfaccion.dirty)">{{ mostrarError('nivelSatisfaccion') }}</label>
+
+   <ion-button class="btnSubmitAltaPropinas" type="submit" color="warning" expand="block">Editar</ion-button>
+ </form>
+</ion-content>
