@@ -9,6 +9,6 @@ export class Notificacion {
     public mensaje?: string;
     public receptor?: TipoUsuario;
     public receptorSecundario?: TipoUsuario;
-    public firstApparition: boolean = true;
-    //public emisor?: [{nombre: string, idEmisor: string}];
+    public firstApparition = true;
+    // public emisor?: [{nombre: string, idEmisor: string}];
 }

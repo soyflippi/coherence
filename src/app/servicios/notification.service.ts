@@ -13,19 +13,18 @@ export class NotificationService {
 
   subjectNotification;
 
-  constructor(public db: AngularFirestore,
+  constructor(
+    public db: AngularFirestore,
     private utilsService: UtilsService,
     private firebaseService: FirebaseService) { }
 
-  activarNotificaciones(tipoDeUsuario : TipoUsuario)
-  {
-    this.subjectNotification = this.firebaseService.getDocs('notificaciones').subscribe(data => this.verficarNotificaciones(tipoDeUsuario, data));
+  activarNotificaciones(tipoDeUsuario: TipoUsuario) {
+    this.subjectNotification = this.firebaseService.getDocs('notificaciones')
+      .subscribe(data => this.verficarNotificaciones(tipoDeUsuario, data));
   }
 
-  desactivarNotificaciones()
-  {
-    if(this.subjectNotification)
-    {
+  desactivarNotificaciones() {
+    if (this.subjectNotification) {
       this.subjectNotification.unsubscribe();
     }
   }
@@ -42,48 +41,41 @@ export class NotificationService {
     );
   }
 
-  verficarNotificaciones(tipoDeUsuario : TipoUsuario, datos)
-  {
-    let notificaciones = datos.map((a: any) => {
+  verficarNotificaciones(tipoDeUsuario: TipoUsuario, datos) {
+    const notificaciones = datos.map((a: any) => {
       const data = a.payload.doc.data();
       data.id = a.payload.doc.id;
       return data;
     });
-    for (const aux of notificaciones) 
-    {
-      let notificacion : Notificacion = aux;
-      if((notificacion.receptor == tipoDeUsuario || notificacion.receptorSecundario == tipoDeUsuario) && notificacion.firstApparition)
-      {
+    for (const aux of notificaciones) {
+      const notificacion: Notificacion = aux;
+      if ((notificacion.receptor === tipoDeUsuario || notificacion.receptorSecundario === tipoDeUsuario) && notificacion.firstApparition) {
         this.lanzarNotificacion(notificacion);
-      } 
+      }
     }
   }
 
-  lanzarNotificacion(notificacion : Notificacion)
-  {
-    notificacion.firstApparition = false; //SE LO PONE EN FALSE PARA QUE NO VUELVA A APARECER
+  lanzarNotificacion(notificacion: Notificacion) {
+    notificacion.firstApparition = false; // SE LO PONE EN FALSE PARA QUE NO VUELVA A APARECER
     this.actualizarNotificacion(notificacion).then(data => {
-      console.log("Notificacion id = " + notificacion.id + " idPedido = " + notificacion.idPedido);
-      this.utilsService.presentToast(notificacion.mensaje, "toast-info");
+      console.log('Notificacion id = ' + notificacion.id + ' idPedido = ' + notificacion.idPedido);
+      this.utilsService.presentToast(notificacion.mensaje, 'toast-info');
     });
   }
 
-  crearNotificacion(notificacion: Notificacion) 
-  {
+  crearNotificacion(notificacion: Notificacion) {
     return this.firebaseService.addDoc('notificaciones', Object.assign({}, notificacion)).then(data => {
       notificacion.id = data.id;
       this.actualizarNotificacion(notificacion);
     });
   }
 
-  actualizarNotificacion(notificacion: Notificacion) 
-  {
+  actualizarNotificacion(notificacion: Notificacion) {
     notificacion.fechaModificado = new Date();
     return this.firebaseService.updateDoc('notificaciones', notificacion.id, Object.assign({}, notificacion));
   }
 
-  borrarNotificacion(notificacion: Notificacion)
-  {
+  borrarNotificacion(notificacion: Notificacion) {
     notificacion.fechaBaja = new Date();
     return this.firebaseService.updateDoc('notificaciones', notificacion.id, Object.assign({}, notificacion));
   }

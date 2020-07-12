@@ -114,34 +114,29 @@ export class PendientesPage implements OnInit {
     let notificacionBartender = false;
     for (const aux of pedido.productos) { // RECORRO PEDIDO PARA VERFICAR A QUE TIPO DE USUARIO ENVIAR NOTIFICACION
       const producto = aux.producto;
-      if (producto.sector === Sectores.COMIDAS || producto.sector === Sectores.POSTRES)
-      {
+      if (producto.sector === Sectores.COMIDAS || producto.sector === Sectores.POSTRES) {
         notificacionCocinero = true;
         continue;
       }
-      if (producto.sector === Sectores.BEBIDAS)
-      {
+      if (producto.sector === Sectores.BEBIDAS) {
         notificacionBartender = true;
       }
     }
 
     // SI EXISTE ALGUN PRODUCTO DEL SECTOR CORRESPONDIENTE SE CREA LA NOTIFICACION
-    if (notificacionCocinero)
-    {
+    if (notificacionCocinero) {
       this.enviarNotificacion(TipoUsuario.COCINERO);
     }
-    if (notificacionBartender)
-    {
+    if (notificacionBartender) {
       this.enviarNotificacion(TipoUsuario.BARTENDER);
     }
-    //+ this.enviarNotificacion(TipoUsuario.MOZO); //SE LE ENVIA NOTIFICACION DE NUEVO PEDIDO
+    // + this.enviarNotificacion(TipoUsuario.MOZO); //SE LE ENVIA NOTIFICACION DE NUEVO PEDIDO
   }
 
   enviarNotificacion(tipoUsuario: TipoUsuario): void {
     const notificacion = new Notificacion();
     notificacion.mensaje = 'Tiene un nuevo pedido';
-    switch (tipoUsuario)
-    {
+    switch (tipoUsuario) {
       case TipoUsuario.COCINERO:
         notificacion.receptor = TipoUsuario.COCINERO;
         break;

@@ -5,7 +5,7 @@ import { UtilsService } from 'src/app/servicios/utils.service';
 import { Usuario } from 'src/app/clases/usuario';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { NotificationService } from 'src/app/servicios/notification.service';
-  import { from } from 'rxjs';
+import { from } from 'rxjs';
 import { TipoUsuario } from 'src/app/enums/tipo-usuario.enum';
 import { Notificacion } from 'src/app/clases/notificacion';
 @Component({
@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit {
     this.utilsService.showLoadingAndNavigate('pendientes');
   }
 
-  irABartender():void{
+  irABartender(): void {
     this.utilsService.showLoadingAndNavigate('bartender');
   }
 

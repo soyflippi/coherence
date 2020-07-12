@@ -119,10 +119,10 @@ export class AltaUsuariosPage implements OnInit {
       }
       this.authService.signUp(nuevoUsuario).then(datos => {
         this.utilsService.dismissLoading();
-        if(nuevoUsuario.perfil == TipoUsuario.CLIENTE_REGISTRADO)
+        if (nuevoUsuario.perfil === TipoUsuario.CLIENTE_REGISTRADO)
         {
-          let notificacion = new Notificacion();
-          notificacion.mensaje = "Nuevo cliente pendiente de aprobacion";
+          const notificacion = new Notificacion();
+          notificacion.mensaje = 'Nuevo cliente pendiente de aprobacion';
           notificacion.receptor = TipoUsuario.DUEÑO;
           notificacion.receptorSecundario = TipoUsuario.SUPERVISOR;
           this.notificationService.crearNotificacion(notificacion);
@@ -132,7 +132,7 @@ export class AltaUsuariosPage implements OnInit {
           this.utilsService.showLoadingAndNavigate('clientes');
         }
         console.log(datos);
-        
+
       }, (err) => {
         this.utilsService.dismissLoading();
         this.utilsService.handleError(err, true);
@@ -278,7 +278,7 @@ export class AltaUsuariosPage implements OnInit {
         elemento === 'clave' ||
         elemento === 'clave2' ||
         elemento === 'nombre') {*/
-        if(elemento === 'nombre') {
+        if (elemento === 'nombre') {
           retorno = true;
         }
         break;

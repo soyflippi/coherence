@@ -38,7 +38,8 @@ export class AuthService {
           if (response) {
             usuario.id = response.user.uid;
             this.usuarioService.crearUsuario(usuario.id, usuario)
-              .then((usr: any) => resolve('exito')).catch(e => this.utilsService.handleError(e)); // ADENTRO DEL RESOLVE => this.obtenerDetalle(usr)
+              .then((usr: any) => resolve('exito')).catch(e => this.utilsService.handleError(e));
+            // ADENTRO DEL RESOLVE => this.obtenerDetalle(usr)
           }
         },
         (error: any) => reject(error));
