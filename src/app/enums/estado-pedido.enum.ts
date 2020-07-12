@@ -1,0 +1,8 @@
+export enum EstadoPedido {
+    PENDIENTE = 'PENDIENTE',
+    CONFIRMADO = 'CONFIRMADO',
+    LISTO = 'LISTO',
+    ENTREGADO = 'ENTREGADO',
+    PAGANDO = 'PAGANDO',
+    TERMINADO = 'TERMINADO'
+}

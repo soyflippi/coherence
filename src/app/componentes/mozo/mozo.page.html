@@ -1,0 +1,31 @@
+<app-toolbar [titulo]="'Mozo'" [backBtn]="'home'" [usuario]="usuario">
+</app-toolbar>
+
+<ion-content class="background">
+  <ion-list *ngIf="getPendientes()" color=“transparent”>
+    <ion-list-header color="light">
+      PEDIDOS ACTIVOS
+    </ion-list-header>
+    <ion-item color="warning" *ngIf="!getPendientes()">
+      <ion-label class="ion-text-wrap">
+        No hay pedidos activos
+      </ion-label>
+    </ion-item>
+    <ion-item-sliding *ngFor="let pedido of getPendientes()">
+      <ion-item color="warning">
+        <ion-label color="light">
+          <h2 class="ion-text-capitalize bold">{{pedido.usuario?.nombre}}</h2>
+          <h3>PEDIDO #{{pedido.id}}</h3>
+          <h3>MESA #{{pedido.mesa?.numero}}</h3>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="light" (click)="chatear(pedido, 'MOZO')">
+          <ion-icon slot="icon-only" name="chatbox-ellipses-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>

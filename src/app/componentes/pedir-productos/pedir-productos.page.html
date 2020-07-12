@@ -1,0 +1,75 @@
+<div class="fondoPedirProductos">
+
+  <form [formGroup]="formPedirProductos" (ngSubmit)="onSubmitPedirProductos()" [hidden]="cambiarVistaPedirProductos()">
+
+    <div class="headPedirProductos">
+      <button type="button" class="btnVolverPedirProductos" (click)="volverPedirProductos()"><</button>
+      <label class="lblHeadPedirProductos">{{perfilUsuarioPedirProductos}}</label>
+      <img class="imgHeadPedirProductos" [src]="imgUsuarioPedirProductos">
+    </div>
+    <button type="button" class="btnPedirProductosPlatos"  (click)="tipoDePedidoSeleccionado('platos')">PLATOS</button>
+    <button type="button" class="btnPedirProductosPostres" (click)="tipoDePedidoSeleccionado('postres')">POSTRES</button>
+    <button type="button" class="btnPedirProductosBebidas" (click)="tipoDePedidoSeleccionado('bebidas')">BEBIDAS</button>
+    <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+    <!--
+    <div class="contenedorListaProductos">
+      <div class="contenedorOpciones" *ngFor="let producto of lista">
+        <div class="contenedorOpcionComida" *ngIf="mostrarSegunTipoProducto(producto)">
+          <img  *ngFor="let foto of producto.fotos" class="imgProducto" [src]="ponerFormatoFoto(foto)">     
+        </div>
+      </div>
+    </div>
+    -->
+    <div class="contenedorListaProductos">
+
+      <div class="contenedorOpciones" *ngIf="mostrarSegunTipoProducto('COMIDAS')">
+        <div class="contenedorOpcionComida" *ngFor="let producto of listaPlatos">
+          <div class="infoProducto">{{producto.codigo}} - ${{producto.precio}}</div>
+          <img  *ngFor="let foto of producto.fotos" class="imgProducto" [src]="ponerFormatoFoto(foto)">     
+          <button type="button" class="btnAgregarProducto" (click)="agregarProducto(producto)">+</button>
+          <button type="button" class="btnEliminarProducto" (click)="eliminarProducto(producto)">-</button>
+        </div>
+      </div>
+
+      <div class="contenedorOpciones" *ngIf="mostrarSegunTipoProducto('POSTRES')">
+        <div class="contenedorOpcionComida" *ngFor="let producto of listaPostres">
+          <div class="infoProducto">{{producto.codigo}} - ${{producto.precio}}</div>
+          <img  *ngFor="let foto of producto.fotos" class="imgProducto" [src]="ponerFormatoFoto(foto)">     
+          <button type="button" class="btnAgregarProducto" (click)="agregarProducto(producto)">+</button>
+          <button type="button" class="btnEliminarProducto" (click)="eliminarProducto(producto)">-</button>
+        </div>
+      </div>
+
+      <div class="contenedorOpciones" *ngIf="mostrarSegunTipoProducto('BEBIDAS')">
+        <div class="contenedorOpcionComida" *ngFor="let producto of listaBebidas">
+          <div class="infoProducto">{{producto.codigo}} - ${{producto.precio}}</div>
+          <img  *ngFor="let foto of producto.fotos" class="imgProducto" [src]="ponerFormatoFoto(foto)">     
+          <button type="button" class="btnAgregarProducto" (click)="agregarProducto(producto)">+</button>
+          <button type="button" class="btnEliminarProducto" (click)="eliminarProducto(producto)">-</button>
+        </div>
+      </div>
+
+    </div>
+
+    <input type="text" class="totalPedirProductos" formControlName="totalPedido">
+    <button type="button" class="btnConsultaMozo" (click)="confirmarPedido()">Consulta al Mozo</button>
+    <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  </form>
+
+  <div class="contenedorConfirmarPedido" *ngIf="cambiarVistaPedirProductos()">
+    <div *ngFor="let producto of lista">
+      <span [hidden]="producto.cantidad == 0">{{producto.codigo}} x {{producto.cantidad}}</span>
+    </div>
+    <span class="totalConfirmarPedido">Total = ${{totalPedido}}</span>
+    <button type="text" class="btnCancelarPedido" (click)="cancelar()">cancelar</button>
+    <button type="text" class="btnConfirmarPedido" (click)="ordenar()">confirmar</button>
+  </div>
+
+  <div class="loadingContainerPedirProductos" id="loadingContainerPedirProductos" hidden>
+    <div class="loadingPedirProductos">
+      <img src="../../../assets/spinner.png">
+    </div>
+  </div>
+
+</div>

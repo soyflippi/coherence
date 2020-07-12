@@ -1,0 +1,66 @@
+<app-toolbar
+  [titulo]="'Nuevo Producto'"
+  [backBtn]="'home'"
+  [usuario]="null">
+</app-toolbar>
+
+<!-- <div class="fondoHome"> -->
+<ion-content class="background">
+ 
+  <div *ngIf="getMuestraModal()" id="myModal" class="modal">
+     <img class="modal-content" id="img01" [src]="base64ToImg(getFotoActual())" (click)="setMuestraModal(false)">
+     <a class="prev" (click)="irFotoAnt()">&#10094;</a>
+     <a class="next" (click)="irFotoSig()">&#10095;</a>
+  </div>
+  
+  <ion-button *ngIf="getFotos().length < getCantFotos()" color="warning" (click)="tomarFoto()" expand="block">
+    <ion-icon name="camera-outline"></ion-icon> FOTO
+  </ion-button>
+  <ion-button *ngIf="getFotos().length > 0" color="warning" (click)="setMuestraModal(true)" expand="block">
+    <ion-icon name="image-outline"></ion-icon> VER FOTOS
+  </ion-button>
+
+  <form *ngIf="!getMuestraModal()" [formGroup]="formProducto" (ngSubmit) ="onSubmitProducto()">
+    <label class="lblTitulo">Código</label>
+    <ion-input type="text" [formControl]="formProducto.controls.codigo"></ion-input>
+    <label class="lblError" *ngIf="formProducto.controls.codigo.invalid && (formProducto.controls.codigo.touched || formProducto.controls.codigo.dirty)">{{ mostrarError('codigo') }}</label>
+        
+    <label class="lblTitulo">Nombre</label>
+    <ion-input type="text" [formControl]="formProducto.controls.nombre"></ion-input>
+    <label class="lblError" *ngIf="formProducto.controls.nombre.invalid && (formProducto.controls.nombre.touched || formProducto.controls.nombre.dirty)">{{ mostrarError('nombre') }}</label>
+        
+    <label class="lblTitulo">Descripción</label>
+    <ion-input type="text" [formControl]="formProducto.controls.descripcion"></ion-input>
+    <label class="lblError" *ngIf="formProducto.controls.descripcion.invalid && (formProducto.controls.descripcion.touched || formProducto.controls.descripcion.dirty)">{{ mostrarError('descripcion') }}</label>
+    
+    <label class="lblTitulo">Sector</label>
+    <ion-select [formControl]="formProducto.controls.sector">
+      <ion-select-option *ngFor="let tipo of sector">{{ tipo }}</ion-select-option>
+    </ion-select>
+    <label class="lblError" *ngIf="formProducto.controls.sector.invalid && (formProducto.controls.sector.touched || formProducto.controls.sector.dirty)">{{ mostrarError('sector') }}</label>
+    
+    <label class="lblTitulo">Tiempo de preparación (min.)</label>
+    <ion-input type="number" [formControl]="formProducto.controls.tiempoPromedio"></ion-input>
+    <label class="lblError" *ngIf="formProducto.controls.tiempoPromedio.invalid && (formProducto.controls.tiempoPromedio.touched || formProducto.controls.tiempoPromedio.dirty)">{{ mostrarError('tiempoPromedio') }}</label>
+
+    <label class="lblTitulo">Precio</label>
+    <ion-input type="number" [formControl]="formProducto.controls.precio"></ion-input>
+    <label class="lblError" *ngIf="formProducto.controls.precio.invalid && (formProducto.controls.precio.touched || formProducto.controls.precio.dirty)">{{ mostrarError('precio') }}</label>
+    
+    <!-- <label class="lblTitulo">Foto</label>
+    <br>
+    <button *ngIf="getFotos().length < getCantFotos()" (click)="tomarFoto()">
+      <ion-icon name="camera-outline"></ion-icon>
+    </button>
+    <button *ngIf="getFotos().length > 0" (click)="setMuestraModal(true)">
+      <ion-icon name="image-outline"></ion-icon>
+    </button>
+    <br> -->
+
+    <!-- <button type="button" class="btnVolverAltaProductos" (click)="volverHome()">Volver</button>
+    <button type="button" *ngIf="getFotos().length < getCantFotos()" class="btnFotoAltaProductos" (click)="tomarFoto()">FOTO</button>
+    <button type="button" *ngIf="getFotos().length > 0" class="btnVerFotosAltaProductos" (click)="setMuestraModal(true)">VER FOTOS</button> -->
+    <ion-button class="btnSubmitAltaProductos" type="submit" color="warning" expand="block">ENVIAR</ion-button>
+  </form>
+</ion-content>
+<!-- </div> -->

@@ -1,0 +1,527 @@
+
+.btnVolverAltaUsuarios{
+    //// position: absolute; 
+    width: 25vw; 
+    height: 4vh;
+    top: 96vh;
+    left: 0vw;
+    color: grey;
+    background-color:  rgb(255,215,0);
+    border-radius: 10px;
+    font-size: 2vh;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+}
+  
+.btnFotoAltaUsuarios:active{
+    background-color: rgb(218,165,32);
+}
+
+.btnSubmitAltaUsuarios{
+    //// position: absolute; 
+    width: 90vw; 
+    height: 10vh;
+    top: 126vh;
+    left: 5vw;
+    /*width: 25vw; 
+    height: 4vh;
+    top: 96vh;
+    left: 75vw;
+    color: grey;
+    background-color:  rgb(255,215,0);
+    border-radius: 10px;
+    font-size: 2vh;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+  
+.btnFotoAltaUsuarios:active{
+    background-color: rgb(218,165,32);
+}
+
+.btnFotoAltaUsuarios{
+    //// position: absolute; 
+    width: 25vw; 
+    height: 4vh;
+    top: 96vh;
+    left: 50;
+    color: grey;
+    background-color:  rgb(255,215,0);
+    border-radius: 10px;
+    font-size: 2vh;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+.btnFotoAltaUsuarios:active{
+    background-color: rgb(218,165,32);
+}
+
+.btnQrAltaUsuarios{
+    //// position: absolute; 
+    width: 25vw; 
+    height: 4vh;
+    top: 96vh;
+    left: 25vw;
+    color: grey;
+    background-color:  rgb(255,215,0);
+    border-radius: 10px;
+    font-size: 2vh;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+.btnQrAltaUsuarios:active{
+    background-color: rgb(218,165,32);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.divCuilAltaUsuarios{
+    // position: absolute;
+    width: 80vw;
+    height: 15vh;
+    top: 15vh;
+    left: 10vw;
+}
+
+.divDniAltaUsuarios{
+    // position: absolute;
+    width: 80vw;
+    height: 15vh;
+    top: 30vh;
+    left: 10vw;
+}
+
+.divCorreoAltaUsuarios{
+    // position: absolute;
+    width: 80vw;
+    height: 15vh;
+    top: 45vh;
+    left: 10vw;
+}
+
+.divClaveAltaUsuarios{
+    // position: absolute;
+    width: 80vw;
+    height: 15vh;
+    top: 60vh;
+    left: 10vw;
+}
+
+.divClave2AltaUsuarios{
+    // position: absolute;
+    width: 80vw;
+    height: 15vh;
+    top: 75vh;
+    left: 10vw;
+}
+
+.divNombreAltaUsuarios{
+    // position: absolute;
+    width: 80vw;
+    height: 15vh;
+    top: 90vh;
+    left: 10vw;
+}
+
+.divApellidoAltaUsuarios{
+    // position: absolute;
+    width: 80vw;
+    height: 15vh;
+    top: 105vh;
+    left: 10vw;
+}
+
+.divTipoAltaUsuarios{
+    // position: absolute;
+    width: 80vw;
+    height: 5vh;
+    top: 120vh;
+    left: 10vw;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblCorreoAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpCorreoAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorCorreoAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblClaveAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblClave2AltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpClaveAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpClave2AltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorClaveAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorClave2AltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblNombreAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpNombreAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorNombreAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblApellidoAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpApellidoAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorApellidoAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblDniAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpDniAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorDniAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.lblCuilAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.inpCuilAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 40%;
+    top: 40%;
+    left: 0%;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+.lblErrorCuilAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 20%;
+    top: 80%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vh; 
+    font-size: 2vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+.listTipoAltaUsuarios{
+    // position: absolute;
+    width: 100%; 
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    border: 0px;
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+    /*font-family:Helvetica, sans-serif;
+    font-weight:bold;*/
+}
+
+////////////////////////////////////////////////////////////////////////////////
+

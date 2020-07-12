@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Buscar mesa
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <!--ESPERANDO MESA-->
+  <ion-card class="ion-text-center" *ngIf="!pedido" color="light">
+    <img src="../../../../../assets/mesa-qr.png" />
+    <ion-spinner color="warning" name="crescent"></ion-spinner>
+    <ion-text color="dark">
+      <h1>Lista <ion-label color="warning">de espera</ion-label>
+      </h1>
+    </ion-text>
+
+    <ion-text color="dark">
+      <h5>Actualmente te encuentras en la lista de espera, en breve estarás disfrutando de nuestra cocina de autor.</h5>
+      <p>Tiempo aproximado de espera: 10min</p>
+    </ion-text>
+  </ion-card>
+
+  <!--MESA LISTA-->
+  <ion-card class="ion-text-center" *ngIf="pedido" color="light">
+    <img src="../../../../../assets/mesa-qr.png" />
+    <ion-icon class="feed" color="warning" name="checkbox-outline"></ion-icon>
+    <ion-text color="dark">
+      <h1>Mesa <ion-label color="warning">preparada!</ion-label>
+      </h1>
+    </ion-text>
+    <ion-text color="dark">
+      <h5>La mesa te esta esperando, acercate y escaneá el código QR con tu celular para comenzar a pedir.</h5>
+    </ion-text>
+
+    <ion-button class="qr" color="warning" size="large" expand="block" (click)="escanearQR()">
+      <ion-icon name="qr-code-outline"></ion-icon>
+      Escanear QR
+    </ion-button>
+
+  </ion-card>
+
+</ion-content>

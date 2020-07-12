@@ -1,0 +1,41 @@
+
+
+ion-slides {
+    height: 200px; /* slider height you want */
+    .swiper-pagination-bullet-active {
+        background: yellow;
+    }
+}
+  
+  .lblTitulo {
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+  }
+  
+  .lblError {
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  red;
+    display: block;
+  }
+  
+  ion-textarea {
+    color: grey;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+  }
+  
+  .btnSubmitAltaEncuestas{
+    margin-top: 20px;
+    height: 7vh;
+  }
+  
+  .btnSubmitAltaEncuestas:active{
+    background-color: rgb(218,165,32);
+  }
+  

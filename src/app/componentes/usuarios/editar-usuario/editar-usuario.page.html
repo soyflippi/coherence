@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Editar {{ usuario?.nombre }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-align-self-center" size="12">
+        <ion-list-header>
+          <ion-text color="light">
+            <h2 class="lblNombreAltaUsuarios">Foto perfil </h2>
+          </ion-text>
+        </ion-list-header>
+        <ion-avatar class="ion-margin-start" (click)="tomarFotoAltaUsuarios()">
+          <img src="{{usuarioService.mostrarFoto(formUsuario.controls.foto.value)}}">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <form [formGroup]="formUsuario" (ngSubmit)="onSubmitUsuario()">
+
+    <div class="divNombreAltaUsuarios">
+      <label class="lblNombreAltaUsuarios">Nombre</label>
+      <input type="text" class="inpNombreAltaUsuarios" formControlName="nombre">
+      <label class="lblErrorNombreAltaUsuarios"
+        [hidden]="formUsuario.controls.nombre.valid || formUsuario.controls.nombre.pristine">NOMBRE INVALIDO</label>
+    </div>
+
+    <div class="divApellidoAltaUsuarios">
+      <label class="lblApellidoAltaUsuarios">Apellido</label>
+      <input type="text" class="inpApellidoAltaUsuarios" formControlName="apellido">
+      <label class="lblErrorApellidoAltaUsuarios"
+        [hidden]="formUsuario.controls.apellido.valid || formUsuario.controls.apellido.pristine">APELLIDO
+        INVALIDO</label>
+    </div>
+
+    <div class="divDniAltaUsuarios">
+      <label class="lblDniAltaUsuarios">DNI</label>
+      <input type="text" class="inpDniAltaUsuarios" formControlName="dni" name="dni">
+      <label class="lblErrorDniAltaUsuarios"
+        [hidden]="formUsuario.controls.dni.valid || formUsuario.controls.dni.pristine">DNI INVALIDO</label>
+    </div>
+
+    <div class="divCuilAltaUsuarios">
+      <label class="lblCuilAltaUsuarios">CUIL</label>
+      <input type="text" class="inpCuilAltaUsuarios" formControlName="cuil" name="cuil">
+      <label class="lblErrorCuilAltaUsuarios"
+        [hidden]="(formUsuario.controls.cuil.valid && validacionAuxCuil(formUsuario.controls.dni.value)) || formUsuario.controls.cuil.pristine">CUIL
+        INVALIDO</label>
+    </div>
+
+    <div class="divTipoAltaUsuarios">
+      <ion-select class="listTipoAltaUsuarios" [formControl]="formUsuario.controls.tipo">
+        <ion-select-option *ngFor="let tipo of tipoUsuario">{{ tipo }}</ion-select-option>
+      </ion-select>
+    </div>
+    <ion-button type="submit" class="btnSubmitAltaUsuarios" color="warning" expand="block">Editar</ion-button>
+  </form>
+</ion-content>

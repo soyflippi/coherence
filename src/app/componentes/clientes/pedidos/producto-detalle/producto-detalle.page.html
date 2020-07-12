@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Agregar {{ producto?.nombre }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-slides *ngIf="didInit" color="warning" pager="true" [options]="slideOpts" #slideFotos>
+          <ion-slide *ngFor="let f of producto?.fotos">
+            <img src="{{'data:image/jpeg;base64,' + f}}">
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-list-header>
+      <h1>Detalle del producto</h1>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>
+          <h2>Nombre</h2>
+        </ion-text>
+        <ion-text color="warning">
+          <h1>{{ producto?.nombre }}</h1>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>
+          <h2>Descripción</h2>
+        </ion-text>
+        <ion-text color="warning">
+          <h1>{{ producto?.descripcion }}</h1>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>
+          <h2>Tiempo de demora</h2>
+        </ion-text>
+        <ion-text color="warning">
+          <h1>{{ producto?.tiempo }} min.</h1>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>
+          <h2>Precio</h2>
+        </ion-text>
+        <ion-text color="warning">
+          <h1>$ {{ producto?.precio }}.00</h1>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>
+          <h2>Cantidad</h2>
+        </ion-text>
+        <ion-text color="warning">
+          <ion-icon name="remove-circle" (click)="decrementar()"></ion-icon>
+          {{cantidad}}
+          <ion-icon name="add-circle" (click)="incrementar()"></ion-icon>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button [disabled]="cantidad === 0" (click)="agregarProducto()" color="warning" expand="block">Agregar</ion-button>
+
+</ion-content>

@@ -1,0 +1,156 @@
+.lblCorreoLogin{
+    position: absolute;
+    width: 80vw; 
+    height: 5vh;
+    top: 10vh;
+    left: 10vw;
+    border-radius: 10px;
+    background-color: rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;
+}
+
+.inpCorreoLogin{
+    position: absolute;
+    width: 80vw; 
+    height: 5vh;
+    top: 15vh;
+    left: 10vw;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    text-align: center;
+}
+
+.lblClaveLogin{
+    position: absolute;
+    width: 80vw; 
+    height: 5vh;
+    top: 30vh;
+    left: 10vw;
+    border-radius: 10px;
+    background-color:  rgb(255,215,0);
+    color:  grey;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh; 
+    font-size: 3vh;;
+}
+
+.inpClaveLogin{
+    position: absolute;
+    width: 80vw; 
+    height: 5vh;
+    top: 35vh;
+    left: 10vw;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px;
+    border-bottom: 3px solid grey;
+    font-size: 3vh;
+    text-align: center;
+}
+
+//ERRORES
+///////////////////////////////////////////////////////////////////////////
+
+.errCorreoLogin{
+    position: absolute;
+    width: 80vw; 
+    height: 5vh;
+    top: 43vh;
+    left: 10vw;
+    border-radius: 10px;
+    color: grey;
+    background-color: black;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 6vh; 
+    font-size: x-large;
+    animation: showErrorLogin 2s linear;
+}
+
+.errClaveLogin{
+    position: absolute;
+    width: 80vw; 
+    height: 5vh;
+    top: 52vh;
+    left: 10vw;
+    border-radius: 10px;
+    color: grey;
+    background-color: black;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 6vh; 
+    font-size: x-large;
+    animation: showErrorLogin 2s linear;
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+.btnSubmitLogin{
+    position: absolute; 
+    width: 70vw; 
+    height: 10vh;
+    top: 60vh;
+    left: 15vw;
+    /*color: grey;
+    background-color:  rgb(255,215,0);
+    border-radius: 10px;
+    box-shadow: 0 10px 	rgb(218,165,32);
+    font-size: 5vh;*/
+}
+
+/*.btnSubmitLogin:active{
+    transform: translate(0px, 5px);
+    box-shadow: 0 5px rgb(218,165,32);
+}*/
+
+.btnResetLogin{
+    position: absolute; 
+    width: 70vw; 
+    height: 6vh;
+    top: 75vh;
+    left: 15vw;
+    /*color: grey;
+    background-color:  rgb(255,215,0);
+    border-radius: 10px;
+    box-shadow: 0 10px 	rgb(218,165,32);
+    font-size: 5vh;*/
+}
+
+/*.btnResetLogin:active{
+    transform: translate(0px, 5px);
+    box-shadow: 0 5px rgb(218,165,32);
+}*/
+
+@keyframes showErrorLogin{
+    from {transform: scale(0.5, 0.5);}
+    to {transform: scale(1, 1);}
+}
+
+.headLogin{
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  height: 5vh;
+  width: 100vw;
+  background-color: rgb(255,215,0);
+}
+
+.btnVolverLogin{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 15%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  color: grey;
+  font-size: 2em;
+  vertical-align: middle;
+} 

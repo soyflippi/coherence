@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="backBtn" [defaultHref]="backBtn" icon="arrow-back-outline" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      {{ titulo }}
+    </ion-title>
+    <ion-button *ngIf="usuario" slot="end" fill="clear" (click)="logOut()">
+      <ion-icon color="light" name="log-out-outline"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="notificaciones" slot="start" fill="clear" (click)="goToNotificaciones()">
+      <ion-icon color="light" name="notifications-outline"></ion-icon>
+    </ion-button>
+    <ion-avatar *ngIf="usuario" slot="end" class="avatar">
+      <img [src]="usuarioService.obtenerFoto(usuario)">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
